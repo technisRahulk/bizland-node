@@ -9,6 +9,12 @@
     "client": "npm start --prefix bizland-react",
     "dev": "concurrently \"npm run server\" \"npm run client\""
   },
+  "builds": [
+    { "src": "index.js", "use": "@now/node" }
+   ],
+  "routes": [
+    { "src": "/(.*)", "dest": "index.js" }
+  ],
   "author": "rx",
   "license": "ISC",
   "dependencies": {
