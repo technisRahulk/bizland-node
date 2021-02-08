@@ -5,13 +5,14 @@ const nodemailer=require('nodemailer')
 const multiparty = require("multiparty");
 require("dotenv").config();
 const app=express()
-const path = require("path");
 
-app.use(express.static(path.join(__dirname, "../bizland-react/build")));
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({extended:true}));
 app.use(cors())
 
+app.get('/',(req,res)=>{
+  res.send('Welcome to bizland node')
+})
 
 app.post('/api/form',(req,res)=>{
     let data =req.body;
