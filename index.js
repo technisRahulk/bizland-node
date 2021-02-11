@@ -11,7 +11,7 @@ app.use(bodyParser.urlencoded({extended:true}));
 app.use(cors())
 
 app.get('/',(req,res)=>{
-  res.send('Welcome to bizland node')
+  res.send('Welcome to Contact node API')
 })
 
 app.post('/api/form',(req,res)=>{
@@ -34,7 +34,7 @@ app.post('/api/form',(req,res)=>{
   });
   const mail = {
     from: data.name,
-    to: process.env.EMAIL,
+    to: process.env.EMAIL_RECP,
     subject: data.subject,
     text: `${data.name} <${data.email}> \n${data.message}`,
   };
